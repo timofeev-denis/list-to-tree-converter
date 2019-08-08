@@ -1,16 +1,18 @@
 package ru.code4fun.utils;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+public interface ListItem {
 
-/**
- * Created by: Denis Timofeev
- * Date: 04.08.2019
- */
+    /**
+     * Path getter
+     *
+     * @return path
+     */
+    String getPath();
 
-@Data
-@AllArgsConstructor
-public class ListItem {
-    private String name;
-    private String path;
+    /**
+     * Path setter
+     *
+     * @param path path value
+     */
+    void setPath(String path);
 }

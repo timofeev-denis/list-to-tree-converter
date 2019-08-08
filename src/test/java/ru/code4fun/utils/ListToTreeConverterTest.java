@@ -14,34 +14,34 @@ import static org.junit.jupiter.api.Assertions.*;
  * Date: 04.08.2019
  */
 class ListToTreeConverterTest {
-    private List<ListItem> list;
+    private List<ListItemImpl> list;
 
     @BeforeEach
     void setUp() {
-        List<ListItem> items = Arrays.asList(
-                new ListItem("Item 0", "0"),
-                new ListItem("Item 0.0", "0.0"),
-                new ListItem("Item 0.0.0", "0.0.0"),
-                new ListItem("Item 0.0.1", "0.0.1"),
-                new ListItem("Item 0.0.2", "0.0.2"),
-                new ListItem("Item 0.0.2.0", "0.0.2.0"),
-                new ListItem("Item 0.1", "0.1"),
-                new ListItem("Item 0.1.0", "0.1.0"),
-                new ListItem("Item 0.2", "0.2"),
-                new ListItem("Item 0.2.0", "0.2.0"),
-                new ListItem("Item 0.3", "0.3"));
+        List<ListItemImpl> items = Arrays.asList(
+                new ListItemImpl("Item 0", "0"),
+                new ListItemImpl("Item 0.0", "0.0"),
+                new ListItemImpl("Item 0.0.0", "0.0.0"),
+                new ListItemImpl("Item 0.0.1", "0.0.1"),
+                new ListItemImpl("Item 0.0.2", "0.0.2"),
+                new ListItemImpl("Item 0.0.2.0", "0.0.2.0"),
+                new ListItemImpl("Item 0.1", "0.1"),
+                new ListItemImpl("Item 0.1.0", "0.1.0"),
+                new ListItemImpl("Item 0.2", "0.2"),
+                new ListItemImpl("Item 0.2.0", "0.2.0"),
+                new ListItemImpl("Item 0.3", "0.3"));
         list = new ArrayList<>(items);
     }
 
     @Test
-    void rootHasNameOfFirstElement() {
-        Node root = ListToTreeConverter.convert(list);
+    void rootHasNameOfTheFirstElement() {
+        TreeItemImpl root = ListToTreeConverter.convert(list);
         assertEquals(list.get(0).getName(), root.getName());
     }
 
     @Test
     void rootHasFourChildren() {
-        Node root = ListToTreeConverter.convert(list);
+        TreeItemImpl root = ListToTreeConverter.convert(list);
         assertEquals(4, root.getChildren().size());
     }
 
